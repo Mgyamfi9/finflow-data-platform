@@ -1,0 +1,66 @@
+# ============================================================
+# FinFlow Data Platform — .gitignore
+# ============================================================
+# --- Secrets ---
+.env
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+venv/
+.venv/
+*.egg
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+docker-volumes/
+
+# --- Data (generated, do not commit) ---
+data/
+*.parquet
+*.avro
+*.csv
+!seeds/*.csv
+
+# --- NiFi ---
+ingestion/nifi/state/
+ingestion/nifi/database_repository/
+ingestion/nifi/flowfile_repository/
+ingestion/nifi/content_repository/
+ingestion/nifi/provenance_repository/
+
+# --- Airflow ---
+airflow/logs/
+
+# --- Spark ---
+spark/logs/
+spark/work/
+spark-warehouse/
+derby.log
+metastore_db/
+
+# --- dbt ---
+dbt/finflow/target/
+dbt/finflow/dbt_packages/
+dbt/finflow/logs/
+
+# --- Misc ---
+*.log
+*.tmp
+.pytest_cache/
+htmlcov/
+.coverage
